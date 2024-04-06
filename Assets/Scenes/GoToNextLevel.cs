@@ -14,13 +14,17 @@ public class GoToNextLevel : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
-
+    
     public void UnLockLevel()
     {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        int currentLevel = SceneManager.GetActiveScene().buildIndex-1;
         if (currentLevel >= PlayerPrefs.GetInt("levels"))
         {
             PlayerPrefs.SetInt("levels", currentLevel + 1);
         }
+    }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

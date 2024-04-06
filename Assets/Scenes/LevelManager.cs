@@ -21,10 +21,14 @@ public class LevelManager : MonoBehaviour
             buttons[i].interactable = true;
         }
     }
-
+   
     public void loadLevel(int levelindex)
     {
         SceneManager.LoadScene(levelindex);
+    }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
 

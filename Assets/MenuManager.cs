@@ -23,6 +23,10 @@ public class MenuManager : MonoBehaviour
 
     public void Exit()
     {
-        settingsPanel?.SetActive(false);
+        settingsPanel.SetActive(false);
+    }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

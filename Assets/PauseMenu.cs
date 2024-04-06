@@ -44,5 +44,8 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
