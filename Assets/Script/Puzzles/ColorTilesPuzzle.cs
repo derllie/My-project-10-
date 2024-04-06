@@ -9,22 +9,24 @@ using UnityEngine.PlayerLoop;
 
 public class ColorTilesPuzzle : MonoBehaviour
 {
+    [SerializeField] private GameObject objectToShow;
     [SerializeField] private List<TileColorPair> tiles;
     [SerializeField] private List<Color> colors;
     
     private void Start()
     {
+        objectToShow.SetActive(false);
         foreach (var tile in tiles)
         {
             tile.ColorTile.colors = colors;
         }
-        Events.TileChanged += Debug;
+        Events.TileChanged += ShowBridge;
     }
-    public void Debug()
+    public void ShowBridge()
     {
         if (CheckIfSolved())
         {
-            UnityEngine.Debug.Log("Solved");
+            objectToShow.SetActive(true);
         }
     }
 

@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11924093639e0094d85186ddb6697f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToShow: {fileID: 626401360}
   tiles:
   - <ColorTile>k__BackingField: {fileID: 97900345}
     <CorrectColor>k__BackingField: 0
@@ -4883,7 +4884,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44533bb5cb0bd734eb62f2592c7d8856,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1486199628}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44533bb5cb0bd734eb62f2592c7d8856, type: 3}
 --- !u!1001 &447044507
@@ -5983,6 +5988,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0a2dbd0fe7556b4b822ec7a20748cc1, type: 3}
+--- !u!1 &626401360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 44533bb5cb0bd734eb62f2592c7d8856,
+    type: 3}
+  m_PrefabInstance: {fileID: 444360507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &626401363 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44533bb5cb0bd734eb62f2592c7d8856,
+    type: 3}
+  m_PrefabInstance: {fileID: 444360507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &636720520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12666,12 +12683,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486199624}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.328, y: 12.72, z: 1.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.70435107, z: 0, w: 0.70985186}
+  m_LocalPosition: {x: -0.008056474, y: 1.7971984, z: 0.018385418}
+  m_LocalScale: {x: 0.4818859, y: 0.88097966, z: 0.40888318}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 626401363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1486199629
 BoxCollider:
@@ -21223,7 +21240,6 @@ SceneRoots:
   - {fileID: 1956209774}
   - {fileID: 1886714066}
   - {fileID: 1045427115}
-  - {fileID: 1486199628}
   - {fileID: 350936339}
   - {fileID: 1628783845}
   - {fileID: 1825318920}
