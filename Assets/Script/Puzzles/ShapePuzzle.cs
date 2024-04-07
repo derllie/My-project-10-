@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Script.Data;
 using UnityEngine;
 
@@ -9,30 +10,29 @@ namespace Script.Puzzles
     {
         [SerializeField] private List<ShapeButton> buttons;
         [SerializeField] private GameObject objectToShow;
+        private bool objectActive; 
         private void Start()
         {
-            Events.ShapeDetected += MakeAction;
             objectToShow.SetActive(false);
         }
 
-        private void MakeAction()
+        private void Update()
         {
-            if (IsSolved())
+            if (!objectActive)
             {
-                Debug.Log("solved");
-                objectToShow.SetActive(true);
-            }
-        }
-        private bool IsSolved()
-        {
-            foreach (var button in buttons)
-            {
-                if (!button.IsSolved)
+                if (IsSolved())
                 {
-                    return false;
+                    Debug.Log("solved");
+                    objectToShow.SetActive(true);
+                    objectActive = true;
                 }
             }
-            return true;
+            
+        }
+
+        private bool IsSolved()
+        {
+            return buttons.All(button => button.IsSolved);
         }
     }
 }

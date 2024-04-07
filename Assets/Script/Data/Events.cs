@@ -5,7 +5,5 @@ namespace Script.Data
     public static class Events
     {
         public static UnityAction TileChanged { get; set; }
-        
-        public static UnityAction ShapeDetected { get; set; }
     }
 }
