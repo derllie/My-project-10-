@@ -26,6 +26,7 @@ public class ColorTilesPuzzle : MonoBehaviour
     {
         if (CheckIfSolved())
         {
+            
             objectToShow.SetActive(true);
         }
     }

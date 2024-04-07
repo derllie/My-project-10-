@@ -9,30 +9,53 @@ namespace Script.Puzzles
     {
         [SerializeField] private Shape correctShape;
         public bool IsSolved { get; private set; }
-        private void OnCollisionEnter(Collision other)
+
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.GetComponent<Shape>())
             {
                 if (other.gameObject == correctShape.gameObject)
                 {
-                    Debug.Log("");
+                    Debug.Log("Right Shape");
                     IsSolved = true;
                 }
                 else
                 {
+                    Debug.Log("Wrong Shape");
                     IsSolved = false;
                 }
                 Events.ShapeDetected?.Invoke();
             }
         }
 
-        private void OnCollisionExit(Collision other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.GetComponent<Shape>())
             {
-                IsSolved = false;
+                if (other.gameObject == correctShape.gameObject)
+                {
+                    Debug.Log("Right Shape");
+                    IsSolved = true;
+                }
+                else
+                {
+                    Debug.Log("Wrong Shape");
+                    IsSolved = false;
+                }
+
                 Events.ShapeDetected?.Invoke();
             }
         }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.GetComponent<Shape>())
+            {
+                Debug.Log("No Shape");
+                IsSolved = false;
+                Events.ShapeDetected?.Invoke();
+            }        
+        }
+        
     }
 }
