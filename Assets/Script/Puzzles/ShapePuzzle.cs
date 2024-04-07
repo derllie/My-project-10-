@@ -19,6 +19,7 @@ namespace Script.Puzzles
         {
             if (IsSolved())
             {
+                Debug.Log("solved");
                 objectToShow.SetActive(true);
             }
         }
