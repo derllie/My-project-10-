@@ -14,37 +14,22 @@ namespace Script.Puzzles
         {
             if (other.gameObject.GetComponent<Shape>())
             {
-                if (other.gameObject == correctShape.gameObject)
+                if (!IsSolved)
                 {
-                    Debug.Log("Right Shape");
-                    IsSolved = true;
-                }
-                else
-                {
-                    Debug.Log("Wrong Shape");
-                    IsSolved = false;
-                }
-            }
-        }
-
-        private void OnTriggerStay(Collider other)
-        {
-            if (other.gameObject.GetComponent<Shape>())
-            {
-                if (other.gameObject == correctShape.gameObject)
-                {
-                    Debug.Log("Right Shape");
-                    IsSolved = true;
-                }
-                else
-                {
-                    Debug.Log("Wrong Shape");
-                    IsSolved = false;
+                    if (other.gameObject == correctShape.gameObject)
+                    {
+                        Debug.Log("Right Shape");
+                        IsSolved = true;
+                    }
+                    else
+                    {
+                        Debug.Log("Wrong Shape");
+                        IsSolved = false;
+                    }
                 }
                 
             }
         }
-
         private void OnTriggerExit(Collider other)
         {
             if (other.gameObject.GetComponent<Shape>())
