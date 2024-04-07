@@ -15,6 +15,7 @@ namespace Script.Puzzles
             {
                 if (other.gameObject == correctShape.gameObject)
                 {
+                    Debug.Log("");
                     IsSolved = true;
                 }
                 else
