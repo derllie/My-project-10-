@@ -8,19 +8,19 @@ namespace Script.Puzzles
     public class ShapePuzzle : MonoBehaviour
     {
         [SerializeField] private List<ShapeButton> buttons;
-
+        [SerializeField] private GameObject objectToShow;
         private void Start()
         {
             Events.ShapeDetected += MakeAction;
+            objectToShow.SetActive(false);
         }
 
         private void MakeAction()
         {
             if (IsSolved())
             {
-                Debug.Log("Solved");
+                objectToShow.SetActive(true);
             }
-            
         }
         private bool IsSolved()
         {

@@ -15,12 +15,10 @@ namespace Script.Puzzles
             {
                 if (other.gameObject == correctShape.gameObject)
                 {
-                    Debug.Log("Right Shape");
                     IsSolved = true;
                 }
                 else
                 {
-                    Debug.Log("Wrong Shape");
                     IsSolved = false;
                 }
                 Events.ShapeDetected?.Invoke();
@@ -31,8 +29,6 @@ namespace Script.Puzzles
         {
             if (other.gameObject.GetComponent<Shape>())
             {
-                Debug.Log("No Shape");
-
                 IsSolved = false;
                 Events.ShapeDetected?.Invoke();
             }
