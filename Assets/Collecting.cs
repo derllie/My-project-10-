@@ -21,6 +21,7 @@ public class Collecting : MonoBehaviour
             coinText.text = "Coin: " + Coin.ToString();
                 Debug.Log(Coin);
             Destroy(other.gameObject);
+            AudioManager.instance.PlaySFX("Coin");
         }
     }
 }
