@@ -309,6 +309,7 @@ namespace StarterAssets
                     if (_hasAnimator)
                     {
                         _animator.SetBool(_animIDJump, true);
+                        AudioManager.instance.PlaySFX("Jump");
                     }
                 }
 
