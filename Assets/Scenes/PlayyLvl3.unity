@@ -2409,7 +2409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43d57393103b2642b6ab9190463b7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToShow: {fileID: 0}
+  objectToShow: {fileID: 671931520}
 --- !u!1001 &221490979
 PrefabInstance:
   m_ObjectHideFlags: 0
