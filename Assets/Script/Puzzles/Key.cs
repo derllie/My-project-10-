@@ -6,7 +6,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     [SerializeField] private GameObject objectToShow;
-
+    private bool grabbed;
     private void Start()
     {
         objectToShow.SetActive(false);
@@ -14,10 +14,17 @@ public class Key : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<CharacterController>())
+        if (other.gameObject.GetComponent<CharacterController>() && !grabbed)
         {
-            objectToShow.SetActive(true);
-            Destroy(gameObject);
+            grabbed = true;
+            StartCoroutine(GrabKeyRoutine());
         }
+    }
+
+    private IEnumerator GrabKeyRoutine()
+    {
+        yield return new WaitForSeconds(3);
+        objectToShow.SetActive(true);
+        Destroy(gameObject);
     }
 }
