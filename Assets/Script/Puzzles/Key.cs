@@ -25,6 +25,7 @@ public class Key : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         objectToShow.SetActive(true);
+        AudioManager.instance.PlaySFX("NewLevel");
         Destroy(gameObject);
     }
 }

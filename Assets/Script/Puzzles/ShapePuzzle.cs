@@ -23,6 +23,7 @@ namespace Script.Puzzles
                 if (IsSolved())
                 {
                     Debug.Log("solved");
+                    AudioManager.instance.PlaySFX("NewLevel");
                     objectToShow.SetActive(true);
                     objectActive = true;
                 }

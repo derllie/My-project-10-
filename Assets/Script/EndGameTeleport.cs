@@ -15,5 +15,6 @@ public class EndGameTeleport : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         canvasToShow.SetActive(true);
+        AudioManager.instance.PlaySFX("Win");
     }
 }

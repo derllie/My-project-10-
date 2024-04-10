@@ -26,7 +26,7 @@ public class ColorTilesPuzzle : MonoBehaviour
     {
         if (CheckIfSolved())
         {
-            
+            AudioManager.instance.PlaySFX("NewLevel");
             objectToShow.SetActive(true);
         }
     }
